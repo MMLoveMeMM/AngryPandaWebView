@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Carson_Ho</title>
+    <body>
+        <p id="p1">This is my first paragraph.</p>
+        <p id="p2">刘志保身份证信息.</p>
+        <button type="button" id="button1" onclick="callAndroid()">点击回调Android那边的方法</button>
+    </body>
+    <script>
+    // Android需要调用的方法
+   function callJS(){
+      alert("Android调用了JS的callJS方法");
+   }
+
+    function callSumJS(i,m){
+        var result = i*m;
+        // alert(result);
+        document.getElementById("p1").innerHTML= "Android调用JS方法且有返回值--计算结果="+result;
+        // 把结果返回给android那边
+        return result;
+    }
+
+    function callShowJS(identity){
+        alert(identity);
+        document.getElementById("p2").innerHTML= "身份证信息 : "+identity;
+        // 把结果返回给android那边,这个可以不返还
+        return "来自身份证信息 : "+identity;
+    }
+
+    function callAndroid(){
+        // 由于对象映射，所以调用test对象等于调用Android映射的对象
+        AndroidNative.hello("来自html中js中的信息");
+     }
+
+</script>
+
+</head>
+
+</html>
