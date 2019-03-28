@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcel;
+import android.util.Log;
 
 import com.example.mtreader.NativeFunc;
 import com.ivsign.android.IDCReader.IDCReaderSDK;
@@ -19,6 +20,8 @@ import com.ivsign.android.IDCReader.IDCReaderSDK;
 import cn.pumpkin.angrypandawebview.utils.ToolFun;
 
 public class IdentityRender {
+
+    private static final String TAG = IdentityRender.class.getName();
 
     public static final int IDENTITY_TEST = 0x09;
     public static final int IDENTITY_FOREIGN = 0x10;
@@ -269,6 +272,8 @@ public class IdentityRender {
     }
 
     public void Log(String info, int mark) {
+
+        Log.d(TAG,info);
 
     }
 
