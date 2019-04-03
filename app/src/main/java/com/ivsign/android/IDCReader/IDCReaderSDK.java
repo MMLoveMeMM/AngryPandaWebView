@@ -1,5 +1,6 @@
 package com.ivsign.android.IDCReader;
 
+import android.os.Environment;
 import android.util.Log;
 
 public class IDCReaderSDK {
@@ -7,8 +8,8 @@ public class IDCReaderSDK {
 	private static boolean LOAD_SO_FLAG = false;
 	public static String strWltPath = "file:///android_asset";
 	public static int Init() {
-		return wltInit(strWltPath + "/wltlib");
-		//return wltInit(Environment.getExternalStorageDirectory() + "/wltlib");
+		// return wltInit(strWltPath + "/wltlib");
+		return wltInit(Environment.getExternalStorageDirectory() + "/wltlib");
 	}
 
 	public static int unpack(byte[] wltdata, byte[] licdata) {
